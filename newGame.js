@@ -24,7 +24,9 @@ canvas.style.border = "1px solid black";
 // Key listeners
 window.addEventListener("keydown", function(e) {
   if(e.keyCode == 32) {
-    // TODO PROGRAM THE BOUNCE!
+    for (var ball of balls) {
+      ball.bounce();
+    }
   }
   if(e.keyCode == 38) {
     // Up arrow: add a ball

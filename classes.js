@@ -24,7 +24,7 @@ class Ball {
     // Outputs: none
     this.x = x;
   }
-  
+
   setNewColor() {
     // Note: taken from StackOverflow
     // Creates a new random color and returns it using a string to create a hex code
@@ -62,8 +62,13 @@ class Ball {
     }
     // Bouncing off the top
     if (this.y - this.radius <= 0) {
-      this.speed *= -0.5; // bounce back with half velocity
+      this.speed = 0.5 * Math.abs(this.speed); // bounce back with half velocity
     }
+  }
+
+  bounce() {
+    this.speed = -20;
+    this.y -= 10;
   }
 
   // ----- //

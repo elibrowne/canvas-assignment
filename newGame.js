@@ -28,15 +28,27 @@ window.addEventListener("keydown", function(e) {
       ball.bounce();
     }
   }
-  if(e.keyCode == 38) {
-    // Up arrow: add a ball
+  if(e.keyCode == 39) {
+    // Right arrow: add a ball
     balls.push(new Ball("#ff0000", 50, 100, 100, canvas, context)); // new ball
     resetBallX();
   }
-  if(e.keyCode == 40) {
-    // Down arrow: remove a ball (if possible)
+  if(e.keyCode == 37) {
+    // Left arrow: remove a ball (if possible)
     balls.pop();
     resetBallX();
+  }
+  if(e.keyCode == 38) {
+    // Up arrow: larger radius
+    for (var ball of balls) {
+      ball.changeRadius(5);
+    }
+  }
+  if(e.keyCode == 40) {
+    // Down arrow: smaller radius
+    for (var ball of balls) {
+      ball.changeRadius(-5);
+    }
   }
 });
 

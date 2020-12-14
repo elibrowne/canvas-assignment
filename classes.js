@@ -37,6 +37,12 @@ class Ball {
     this.color = newColor; // set the new color of the ball
   }
 
+  changeRadius(amount) {
+    if (this.radius + amount > 0) {
+      this.radius += amount;
+    }
+  }
+
   // ----- //
   // Movement methods //
 

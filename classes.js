@@ -2,7 +2,7 @@ class Ball {
 
   // Constructor //
 
-  constructor (color, radius, x, y, canvas, context) {
+  constructor(color, radius, x, y, canvas, context) {
     // Accepted from the constructor -- each ball has different traits
     this.color = color;
     this.radius = radius;
@@ -18,6 +18,13 @@ class Ball {
   // ----- //
   // Getters and setters //
 
+  setX(x) {
+    // Purpose: changes the x value of the ball
+    // Inputs: x (coordinate) to move the ball to
+    // Outputs: none
+    this.x = x;
+  }
+  
   setNewColor() {
     // Note: taken from StackOverflow
     // Creates a new random color and returns it using a string to create a hex code

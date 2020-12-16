@@ -62,6 +62,10 @@ function drawAll() {
   for (var ball of balls) {
     ball.draw();
   }
+  // Instructions for the user
+  context.fillStyle = "#000000";
+  context.font = "25px Arial";
+  context.fillText("Up/down for ball size; right/left for ball quantity; space to bounce", 25, 50);
   // Loop the animation to the next frame.
   window.requestAnimationFrame(drawAll);
 }

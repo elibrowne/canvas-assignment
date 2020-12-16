@@ -1,5 +1,8 @@
 // Canvas.js Project: Bouncing circles
 // Eli Browne / Hon Comp Sci P. 5 / Dr. Jaiclin
+// Note: this "simulator" (?) will struggle on very short windows. The ball will
+// look floaty and unnatural. This was done to make sure that the ball doesn't ever
+// get stuck in a loop of it crashing into the roof and then crashing into the floor.
 
 var balls = []; // every ball is stored in this array
 

@@ -67,13 +67,11 @@ class Ball {
     // y + radius >= height threshhold, so it would become stuck. Now, it only considers
     // bouncing off the bottom if it's already going down.
     if (this.y + this.radius >= this.canvas.height && this.speed >= 0) {
-      console.log(this.speed);
       this.speed = -.05 * (this.canvas.height - this.highest); // calculate the new speed = 10% of the highest value
       this.highest = this.canvas.height; // reset highest value
       if (Math.abs(this.speed) < 5) { // at very slow speeds, just stop
         // Set an absolute stop on the bottom when the speed is very small
         this.y = this.canvas.height - this.radius;
-        console.log(this.speed);
         this.speed = 0;
       }
     }
@@ -87,7 +85,7 @@ class Ball {
   bounce() {
     this.speed = -20;
     this.y -= 10;
-    //this.highest = this.canvas.height; // reset the highest value after each bounce
+    this.highest = this.canvas.height; // reset the highest value after each bounce
   }
 
   // ----- //

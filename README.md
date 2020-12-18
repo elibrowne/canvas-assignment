@@ -1,5 +1,7 @@
 # Canvas Project
 
+The most recent commit should be the "final project."
+
 The science here isn't super accurate numbers-wise, but there is acceleration due to gravity and the balls bouncing back depending on how fast they hit the ground? Additionally, no real world ball would be able to randomly bounce in midair, but removing that ability from the project would make it more boring.
 
 Requirements checklist (for me so I make sure I get everything before turning it in!)

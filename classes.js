@@ -26,20 +26,11 @@ class Ball {
     this.x = x;
   }
 
-  setNewColor() {
-    // Note: taken from StackOverflow
-    // Creates a new random color and returns it using a string to create a hex code
-    // Used to recolor the ball
-    var letters = '0123456789ABCDEF';
-    var newColor = '#';
-    for (var i = 0; i < 6; i++) {
-      newColor += letters[Math.floor(Math.random() * 16)];
-    }
-    this.color = newColor; // set the new color of the ball
-  }
-
   changeRadius(amount) {
-    if (this.radius + amount > 0) {
+    // Purpose: changes the radius of the ball
+    // Inputs: amount of pixels to change by (positive or negative)
+    // Outputs: none, but the radius changes in size
+    if (this.radius + amount > 0 && this.radius + amount <= 75) { // ball can't be 0 size or too big
       this.radius += amount;
     }
   }
@@ -48,6 +39,10 @@ class Ball {
   // Movement methods //
 
   updatePosition() {
+    // Purpose: change the ball's position using the current speed + checking for boundaries
+    // Inputs: none
+    // Outputs: none, but the ball's y value is updated for the next frame
+
     // Adjusts the speed based on the acceleration of the ball
     this.speed += this.accel;
     // Check if the ball has reached a new height.
@@ -62,6 +57,10 @@ class Ball {
   }
 
   checkBoundary() {
+    // Purpose: check if the ball is hitting a wall and respond appropriately
+    // Inputs: none
+    // Outputs: none, but the ball's speed/position is changed if there's a collision
+
     // Bouncing off the bottom -- there was a problem with it false detecting being
     // near the bottom because the ball would rise but not high enough to pass the
     // y + radius >= height threshhold, so it would become stuck. Now, it only considers
@@ -83,6 +82,9 @@ class Ball {
   }
 
   bounce() {
+    // Purpose: "bounce" the ball through user input
+    // Inputs: none
+    // Outputs: none, but the ball changes its movement pattern
     this.speed = -20;
     this.y -= 10;
     this.highest = this.canvas.height; // reset the highest value after each bounce
@@ -91,6 +93,9 @@ class Ball {
   // ----- //
   // Draw method //
   draw() {
+    // Purpose: draw the ball on the context
+    // Inputs: none, but the context passed to the ball class is used
+    // Outputs: no return value -- a new frame is drawn 
     var ctx = this.context; // for ease of calling
     // Set the color of the ball to the object's color
     ctx.fillStyle = this.color;

@@ -1,8 +1,12 @@
 // Canvas.js Project: Bouncing circles
-// Eli Browne / Hon Comp Sci P. 5 / Dr. Jaiclin
+// Eli Browne / Hon Comp Sci P. 5 / Dr. Jaiclin / 12.18.20
+
 // Note: this "simulator" (?) will struggle on very short windows. The ball will
 // look floaty and unnatural. This was done to make sure that the ball doesn't ever
-// get stuck in a loop of it crashing into the roof and then crashing into the floor.
+// get stuck in a loop of it crashing into the roof and then crashing into the floor,
+// especially on larger screens where the maximum height the ball could reach and the
+// subsequent bounce speed that the ball could reach could become too large. Works
+// ideally on a full-screen window on a laptop, but should work on larger screens too.
 
 var balls = []; // every ball is stored in this array
 
@@ -24,7 +28,7 @@ canvas.width = windowWidth - 20;
 canvas.height = windowHeight - 20;
 canvas.style.border = "1px solid black";
 
-// Key listeners
+// Key listeners for ball size, ball count, bouncing
 window.addEventListener("keydown", function(e) {
   if(e.keyCode == 32) {
     for (var ball of balls) {

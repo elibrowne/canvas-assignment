@@ -1,5 +1,7 @@
 # Canvas Project
 
+The science here isn't super accurate numbers-wise, but there is acceleration due to gravity and the balls bouncing back depending on how fast they hit the ground? Additionally, no real world ball would be able to randomly bounce in midair, but removing that ability from the project would make it more boring.
+
 1. **Multiple objects**
 The user can create multiple ball objects, which are stored in an Array. Objects
 can be changed by being removed, through being clicked on and having their color

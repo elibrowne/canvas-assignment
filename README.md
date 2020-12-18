@@ -1,4 +1,4 @@
-# Canvas Project: Bouncing Balls
+# Canvas Project
 
 1. Multiple objects
 The user can create multiple ball objects, which are stored in an Array. Objects

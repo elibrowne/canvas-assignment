@@ -26,6 +26,27 @@ class Ball {
     this.x = x;
   }
 
+  getX() {
+    // Purpose: returns the x value of the ball
+    // Inputs: none
+    // Outputs: the x coordinate (integer)
+    return this.x;
+  }
+
+  getY() { // note: no setY method was needed
+    // Purpose: returns the y value of the ball
+    // Inputs: none
+    // Outputs: the y coordinate (integer)
+    return this.y;
+  }
+
+  getRadius() {
+    // Purpose: returns the radius  of the ball
+    // Inputs: none
+    // Outputs: the radius (integer)
+    return this.radius;
+  }
+
   changeRadius(amount) {
     // Purpose: changes the radius of the ball
     // Inputs: amount of pixels to change by (positive or negative)
@@ -35,6 +56,20 @@ class Ball {
     }
   }
 
+  makeActive() {
+    // Purpose: set a ball as "active" by changing the color (being affected by user controls)
+    // Inputs: none
+    // Outputs: none, changes variable and ball will update
+    this.color = "#0000ff";
+  }
+
+  deactivate() {
+    // Purpose: change the color back to red (normal ball)
+    // Inputs: none
+    // Outputs: resets ball color, no return
+    this.color = "#ff0000";
+  }
+  
   // ----- //
   // Movement methods //
 
@@ -95,7 +130,7 @@ class Ball {
   draw() {
     // Purpose: draw the ball on the context
     // Inputs: none, but the context passed to the ball class is used
-    // Outputs: no return value -- a new frame is drawn 
+    // Outputs: no return value -- a new frame is drawn
     var ctx = this.context; // for ease of calling
     // Set the color of the ball to the object's color
     ctx.fillStyle = this.color;
